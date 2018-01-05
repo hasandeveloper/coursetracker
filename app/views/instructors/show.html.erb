@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @instructor.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @instructor.email %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @instructor.bio %>
+</p>
+
+<h1>Courses Tought</h1>
+<ul>
+<%@instructor.courses.each do |course|%>
+<%=course.name%>:<%=course.students.length%><p>Students Are Enrolled</p></br>
+<%end%>
+</ul>
+<%= link_to 'Edit', edit_instructor_path(@instructor) %> |
+<%= link_to 'Back', instructors_path %>
